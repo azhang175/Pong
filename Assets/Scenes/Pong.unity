@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 128606084}
   - component: {fileID: 128606086}
   - component: {fileID: 128606085}
+  - component: {fileID: 128606088}
   m_Layer: 0
   m_Name: ball
   m_TagString: Untagged
@@ -177,7 +178,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 128606083}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e864d8146ef1a82479d4344c212ca094, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -280,6 +281,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1743891444}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &128606088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128606083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c011b37dfb91c439af2219e4cabb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddle: {fileID: 0}
+  wall: {fileID: 0}
+  ballPrefab: {fileID: 243638391904005331, guid: 3d8ebfe6653836a40be766e7622f6333, type: 3}
+  gameManager: {fileID: 852926017}
+  rb2b: {fileID: 128606084}
+  maxInitialAngle: 0.67
+  moveSpeed: 6
+  maxStartY: 4
+  speedMultiplier: 1.5
+  isClone: 0
 --- !u!224 &238723963 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 909330600554482313, guid: 28e787cba17c5e6428617dd09c65ab04, type: 3}
@@ -1086,7 +1109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameAudio: {fileID: 852926018}
   gameController: {fileID: 2055016464}
-  OriginalBall: {fileID: 0}
+  OriginalBall: {fileID: 128606088}
   restartButton: {fileID: 315679539}
   mainMenuButton: {fileID: 1817686504}
   scorePlayer1: 0
@@ -2154,7 +2177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8273e07e88df18943a9c2c0c10a542f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginalBall: {fileID: 0}
+  OriginalBall: {fileID: 128606088}
   restartButton: {fileID: 315679539}
   mainMenuButton: {fileID: 1817686504}
 --- !u!4 &2055016465

@@ -9,10 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7866411209730951560}
-  - component: {fileID: 4240979029053537033}
+  - component: {fileID: 8050479549536732535}
   - component: {fileID: 4276616551594635442}
   - component: {fileID: 3725301385199488275}
   - component: {fileID: 2700125753700003116}
+  - component: {fileID: -4558942800463779628}
+  - component: {fileID: 7577032939753122952}
+  - component: {fileID: 6569250067891623896}
+  - component: {fileID: 6691999832171325189}
   m_Layer: 0
   m_Name: ball
   m_TagString: Untagged
@@ -35,7 +39,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4240979029053537033
+--- !u!114 &8050479549536732535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,12 +51,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c011b37dfb91c439af2219e4cabb00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paddle: {fileID: 0}
+  wall: {fileID: 0}
+  ballPrefab: {fileID: 0}
   gameManager: {fileID: 0}
-  rb2b: {fileID: 4276616551594635442}
-  maxInitialAngle: 0.7
-  moveSpeed: 4
+  rb2b: {fileID: 0}
+  maxInitialAngle: 0.67
+  moveSpeed: 2
   maxStartY: 4
-  speedMultiplier: 1.1
+  speedMultiplier: 1.5
+  isClone: 0
 --- !u!50 &4276616551594635442
 Rigidbody2D:
   serializedVersion: 4
@@ -177,3 +185,91 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-4558942800463779628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243638391904005331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c011b37dfb91c439af2219e4cabb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddle: {fileID: 0}
+  wall: {fileID: 0}
+  ballPrefab: {fileID: 0}
+  gameManager: {fileID: 0}
+  rb2b: {fileID: 0}
+  maxInitialAngle: 0.67
+  moveSpeed: 2
+  maxStartY: 4
+  speedMultiplier: 1.5
+  isClone: 0
+--- !u!114 &7577032939753122952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243638391904005331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c011b37dfb91c439af2219e4cabb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddle: {fileID: 0}
+  wall: {fileID: 0}
+  ballPrefab: {fileID: 0}
+  gameManager: {fileID: 0}
+  rb2b: {fileID: 0}
+  maxInitialAngle: 0.67
+  moveSpeed: 2
+  maxStartY: 4
+  speedMultiplier: 1.5
+  isClone: 0
+--- !u!114 &6569250067891623896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243638391904005331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c011b37dfb91c439af2219e4cabb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddle: {fileID: 0}
+  wall: {fileID: 0}
+  ballPrefab: {fileID: 0}
+  gameManager: {fileID: 0}
+  rb2b: {fileID: 0}
+  maxInitialAngle: 0.67
+  moveSpeed: 2
+  maxStartY: 4
+  speedMultiplier: 1.5
+  isClone: 0
+--- !u!114 &6691999832171325189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243638391904005331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c011b37dfb91c439af2219e4cabb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddle: {fileID: 0}
+  wall: {fileID: 0}
+  ballPrefab: {fileID: 243638391904005331}
+  gameManager: {fileID: 0}
+  rb2b: {fileID: 0}
+  maxInitialAngle: 0.67
+  moveSpeed: 2
+  maxStartY: 4
+  speedMultiplier: 1.5
+  isClone: 0
