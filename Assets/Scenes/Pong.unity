@@ -1304,7 +1304,7 @@ MonoBehaviour:
   scorePlayer2: 0
   scoreTextPlayer1: {fileID: 443129178}
   scoreTextPlayer2: {fileID: 1213749574}
-  MaxScore: 10
+  MaxScore: 6
   countdownTextUI: {fileID: 1375731241}
   countdownTime: 3
   playerWinText: {fileID: 238723964}
