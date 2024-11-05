@@ -10,7 +10,6 @@ public class GameAudio : MonoBehaviour
     public AudioClip scoreSound;   
     public AudioClip winSound;
     public AudioClip powerUpSound;
-    public AudioClip explosionSound;
 
     public void PlayWallSound()
     {
@@ -31,17 +30,6 @@ public class GameAudio : MonoBehaviour
     {
         audioSource.PlayOneShot(winSound);
     }
-
-    public void PlayPowerUpSound()
-    {
-        audioSource.PlayOneShot(powerUpSound);
-    }
-
-    public void PlayExplosionSound()
-    {
-        audioSource.PlayOneShot(explosionSound);
-    }
-
 
 }
 

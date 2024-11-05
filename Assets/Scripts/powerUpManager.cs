@@ -5,9 +5,6 @@ using UnityEngine;
 public class powerUpManager : MonoBehaviour
 {
     public GameManager gameManager;
-    // public GameObject SpeedPowerUp;
-    // public GameObject SplitPowerUp;
-    // public GameObject InvisiblePowerUp;
     public List<GameObject> powerUpPrefabs;
     public float minAppearTime = 1f;
     public float maxAppearTime = 3f;
@@ -37,6 +34,4 @@ public class powerUpManager : MonoBehaviour
             Destroy(powerUpInstance, 7f);
         }
     }
-
-
 }

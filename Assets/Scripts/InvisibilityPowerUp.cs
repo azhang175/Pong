@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class InvisibilityPowerUp : MonoBehaviour
 {
-   public GameManager gameManager;
-   public float duration = 5f;
+    public GameManager gameManager;
+    public AudioSource audioSource;
+    public AudioClip powerUpSound;
+    public float duration = 5f;
     public float lifetime = 7f;
 
     private void OnTriggerEnter2D(Collider2D collision)

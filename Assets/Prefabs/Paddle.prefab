@@ -48,8 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rd2d: {fileID: 3200979289269495020}
-  moveSpeed: 8
+  moveSpeed: 10
   id: 0
+  minY: -3.3
+  maxY: 3.3
 --- !u!50 &3200979289269495020
 Rigidbody2D:
   serializedVersion: 4

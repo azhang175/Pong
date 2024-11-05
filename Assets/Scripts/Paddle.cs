@@ -9,6 +9,9 @@ public class Paddle : MonoBehaviour
     public float moveSpeed = 2f;
     public int id;
 
+    public float minY = -4.5f;
+    public float maxY = 4.5f;
+
     private void Update()
     {
         float movement = ProcessInput();
@@ -35,6 +38,10 @@ public class Paddle : MonoBehaviour
         Vector2 velocity = rd2d.velocity;
         velocity.y = movement * moveSpeed;
         rd2d.velocity = velocity;
+
+        Vector2 position = transform.position;
+        position.y = Mathf.Clamp(position.y, minY, maxY);
+        transform.position = position;
     }
 
     

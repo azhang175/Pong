@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    GameManager gameManager;
     public Ball OriginalBall;
     public Button restartButton;
     public Button mainMenuButton;
@@ -19,6 +20,7 @@ public class GameController : MonoBehaviour
     {
         OriginalBall.gameObject.SetActive(true);
         OriginalBall.StartBall();
+
         Debug.Log("Game Started");
 
 

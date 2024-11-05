@@ -32,12 +32,9 @@ public class Ball : MonoBehaviour
     originalSpeed = moveSpeed;
   }
 
+
   public void StartBall()
   {
-    // if(gameManager.gameEnded)
-    // {
-    //   return;
-    // }
     InitialPush();
   }
 
@@ -75,18 +72,11 @@ public class Ball : MonoBehaviour
 
     if(scoreZone != null)
     {
-      if(isClone)
-      {
-        gameManager.OnScoreZoneReached(this, scoreZone.id);
-        Destroy(gameObject);
-      }
-      else
-      {
-        gameManager.OnScoreZoneReached(this, scoreZone.id);
-        resetBall();
-        ResetSpeed();
-        StartBall();
-      }
+      gameManager.OnScoreZoneReached(this, scoreZone.id);
+
+      resetBall();
+      ResetSpeed();
+      StartBall();
     }
   }
 
@@ -103,18 +93,6 @@ public class Ball : MonoBehaviour
     {
       gameManager.gameAudio.PlayWallSound();
     }
-
-    SpeedPowerUp speedPowerUp = collision.gameObject.GetComponent<SpeedPowerUp>();
-    if (speedPowerUp)
-    {
-        gameManager.gameAudio.PlayPowerUpSound();
-    }
-
-    BallSplitPowerUp splitPowerUp = collision.gameObject.GetComponent<BallSplitPowerUp>();
-    if (splitPowerUp)
-    {
-        gameManager.gameAudio.PlayPowerUpSound();
-    }
   }
 
   public IEnumerator ChangeSpeed(float multiplier, float duration)
@@ -127,34 +105,18 @@ public class Ball : MonoBehaviour
     ResetSpeed();
   }
 
-  public void Explode()
-  {
-    int numberOfBalls = Random.Range(1, 10);
-    for(int i = 0; i < numberOfBalls; i++)
-    {
-      GameObject newBall = Instantiate(ballPrefab, transform.position, Quaternion.identity);
-      Ball newBallScript = newBall.GetComponent<Ball>();
-      newBallScript.isClone = true;
-
-      Rigidbody2D newRb2b = newBall.GetComponent<Rigidbody2D>();
-      Vector2 dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * moveSpeed;
-      newRb2b.velocity = dir;    
-    }
-
-    Destroy(gameObject);
-  }
-
   public void SetVisibility(bool isVisible)
+  {
+    spriteRenderer = GetComponent<SpriteRenderer>();
+    if (spriteRenderer != null)
     {
-        if (spriteRenderer == null)
-        {
-            spriteRenderer.enabled = isVisible;
-        }
-        else
-        {
-          Debug.LogError("SpriteRenderer is not assigned in Ball");
-        }
+        spriteRenderer.enabled = isVisible;
     }
+    else
+    {
+      Debug.LogError("SpriteRenderer is not assigned in Ball");
+    }
+  }
 
   public IEnumerator MakeInvisible(float duration)
   {
@@ -162,5 +124,19 @@ public class Ball : MonoBehaviour
     yield return new WaitForSeconds(duration);
     SetVisibility(true);
   }
-  
+
+  public void ChangeDirectionRandomly()
+  {
+    Vector2 randomDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+    rb2b.velocity = randomDirection * moveSpeed;
+  }
+
+  private IEnumerator ChangeDirectionPeriodically()
+  {
+    while (true)
+    {
+      yield return new WaitForSeconds(Random.Range(8f, 8f)); // Change direction every 2 to 5 seconds
+      ChangeDirectionRandomly();
+    }
+  }
 }

@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 5134403687420041024}
+  animator: {fileID: 1309968668687564477}
 --- !u!114 &5134403687420041024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ Animator:
   m_GameObject: {fileID: 4695867224131128729}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ea872833e00bba4438639cb8e7016e12, type: 2}
+  m_Controller: {fileID: 9100000, guid: 03cf2f6dc947a5a4da73010c8334fc6e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
